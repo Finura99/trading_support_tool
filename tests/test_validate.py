@@ -32,4 +32,4 @@ def test_find_invalid_rows():
     print(result)
     print("\nLEN:", len(result))
 
-    assert len(result) == 2
+    assert len(result) == 2 ##expecting 2 rows that are incorrect
