@@ -14,3 +14,22 @@ def test_missing_column():
 
     assert len(result) == 1
     assert "qty" in result
+
+def test_find_invalid_rows():
+    data = {
+        "ticker" : ["AAPL", None],
+        "price" : [-200.4, -302.3],
+        "qty" : [20,300],
+    }
+
+    df = pd.DataFrame(data)
+
+    result = validate_missing_values(df)
+
+    print("\nDF:")
+    print(df)
+    print("\nRESULT:")
+    print(result)
+    print("\nLEN:", len(result))
+
+    assert len(result) == 2

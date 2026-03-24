@@ -17,9 +17,9 @@ def validate_structure(df: pd.DataFrame) -> list: #returns as a list because of 
 def validate_missing_values(df: pd.DataFrame) -> pd.DataFrame: #validation for missing key values
     # check key columns for missing values
     invalid_rows = df[
-        df["ticker"].isna() |
-        df["price"].isna() | df["price"] <= 0 | # true if lower than 0
-        df["qty"].isna()
+        (df["ticker"].isna()) |
+        (df["price"].isna()) | (df["price"] <= 0) | # true if lower than 0
+        (df["qty"].isna())
     ] ##if any of these are missing then returns true by isna()
 
     return invalid_rows
