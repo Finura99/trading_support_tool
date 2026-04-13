@@ -8,8 +8,8 @@ def check_required_files(expected_files: list[str]) -> dict:
     present = [] 
     missing = [] #our cabinets to store our expected and missing files
 
-    for file_name in expected_files:
-        file_path = INPUT_DIR / file_name #checks if there is a file name from expected_files
+    for file_name in expected_files: #expectred files is a lsit of string csv data
+        file_path = INPUT_DIR / file_name 
 
         if file_path.exists(): #does the file exist on disk ?
             present.append(file_name) #if true, adds it to the list

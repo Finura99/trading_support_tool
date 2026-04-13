@@ -7,7 +7,7 @@ def reconcile_counts(trades_df: pd.DataFrame, positons_df: pd.DataFrame) -> dict
 
     difference = trades_count - positions_count
 
-    status = "match" if difference == 0 else "mismatch"
+    status = "match" if difference == 0 else "mismatch" #business logic
 
     if status == "match":
         logging.info(f"Reconciliation OK:{trades_count} trades vs {positions_count} positions")
@@ -19,6 +19,6 @@ def reconcile_counts(trades_df: pd.DataFrame, positons_df: pd.DataFrame) -> dict
         "positions_count" : positions_count,
         "difference": difference,
         "status": status
-        } ##return back as a structured object for exposing to api/dashboard/storing.
+        } ##return back as a structured object (dictionary) for exposing it to api/dashboard/storing.
 
 

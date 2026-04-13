@@ -4,7 +4,7 @@ from reconciliation import reconcile_counts
 from file_checker import check_required_files
 from reporter import generate_summary
 
-import pandas as pd
+import pandas as pd 
 import logging
 
 BASE_DIR = Path(__file__).resolve().parent.parent #root dir
